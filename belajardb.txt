@@ -1,0 +1,168 @@
+
+Setting environment for using XAMPP for Windows.
+LENOVO@LAPTOP-OEBCPR2H c:\xampp
+# cd..
+'cd..' is not recognized as an internal or external command,
+operable program or batch file.
+
+LENOVO@LAPTOP-OEBCPR2H c:\xampp
+# cd..
+'cd..' is not recognized as an internal or external command,
+operable program or batch file.
+
+LENOVO@LAPTOP-OEBCPR2H c:\xampp
+# cd..
+'cd..' is not recognized as an internal or external command,
+operable program or batch file.
+
+LENOVO@LAPTOP-OEBCPR2H c:\xampp
+# cd examp
+The system cannot find the path specified.
+
+LENOVO@LAPTOP-OEBCPR2H c:\xampp
+# cd mysql
+
+LENOVO@LAPTOP-OEBCPR2H c:\xampp\mysql
+# cd bin
+
+LENOVO@LAPTOP-OEBCPR2H c:\xampp\mysql\bin
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.4.24-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sekolah            |
+| test               |
++--------------------+
+6 rows in set (0.000 sec)
+
+MariaDB [(none)]> create db_arzena
+    -> create db_arzenna;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'db_arzena
+create db_arzenna' at line 1
+MariaDB [(none)]> create databases db_arzenna;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'databases db_arzenna' at line 1
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sekolah            |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database db_arzenna;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db_arzenna         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sekolah            |
+| test               |
++--------------------+
+7 rows in set (0.001 sec)
+
+MariaDB [(none)]> use db_arzenna;
+Database changed
+MariaDB [db_arzenna]> desc tbl_arzenna;
+ERROR 1146 (42S02): Table 'db_arzenna.tbl_arzenna' doesn't exist
+MariaDB [db_arzenna]> desc tbl_arzenna
+    -> desc tbl_arzenna;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc tbl_arzenna' at line 2
+MariaDB [db_arzenna]> show tables;
+Empty set (0.001 sec)
+
+MariaDB [db_arzenna]> create table tbl_arzenna(id_arzenna, nama_murid, alamat);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' nama_murid, alamat)' at line 1
+MariaDB [db_arzenna]> use db_arzenna;
+Database changed
+MariaDB [db_arzenna]> create table tbl_arzenna;
+ERROR 1113 (42000): A table must have at least 1 column
+MariaDB [db_arzenna]> create table tbl_arzenna (id_arzenna varchar(5),nama_murid varchar(10),alamat_murid varchar(100));
+Query OK, 0 rows affected (0.031 sec)
+
+MariaDB [db_arzenna]> show tables;
++----------------------+
+| Tables_in_db_arzenna |
++----------------------+
+| tbl_arzenna          |
++----------------------+
+1 row in set (0.001 sec)
+
+MariaDB [db_arzenna]> desc tbl_arzenna;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| id_arzenna   | varchar(5)   | YES  |     | NULL    |       |
+| nama_murid   | varchar(10)  | YES  |     | NULL    |       |
+| alamat_murid | varchar(100) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+3 rows in set (0.020 sec)
+
+MariaDB [db_arzenna]> INSERT intro tbl_arzenna (id_murid, nama_murid, alamat_murid) values ("1","arzenna haqi muhamad","rancakandong,sukamelang subang,jawa barat");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tbl_arzenna (id_murid, nama_murid, alamat_murid) values ("1","arzenna haqi mu...' at line 1
+MariaDB [db_arzenna]> INSERT into tbl_arzenna (id_murid, nama_murid, alamat_murid) values ("1","arzenna haqi muhamad","rancakandong,sukamelang subang,jawa barat");
+ERROR 1054 (42S22): Unknown column 'id_murid' in 'field list'
+MariaDB [db_arzenna]>  INSERT into tbl_arzenna (id_murid, nama_murid, alamat_murid) values ("1","arzenna haqi muhamad","sukamelang,subang,jawa barat");
+ERROR 1054 (42S22): Unknown column 'id_murid' in 'field list'
+MariaDB [db_arzenna]> INSERT into tbl_arzenna (id_murid,nama_murid,alamat_murid) values ("1","arzenna haqi muhamad","sukamelang,subang,jawa barat");
+ERROR 1054 (42S22): Unknown column 'id_murid' in 'field list'
+MariaDB [db_arzenna]>  INSERT into tbl_arzenna (id_murid, nama_murid, alamat_murid) values ("1","arzenna haqi muhamad","sukamelang,subang,jawa barat");
+ERROR 1054 (42S22): Unknown column 'id_murid' in 'field list'
+MariaDB [db_arzenna]>
+MariaDB [db_arzenna]> INSERT into tbl_arzenna (id_arzenna, nama_murid, alamat_murid) values ("1","arzenna haqi muhamad","sukamelang,subang,jawa barat");
+Query OK, 1 row affected, 1 warning (0.002 sec)
+
+MariaDB [db_arzenna]> show tables;
++----------------------+
+| Tables_in_db_arzenna |
++----------------------+
+| tbl_arzenna          |
++----------------------+
+1 row in set (0.001 sec)
+
+MariaDB [db_arzenna]> desc tbl_arzenna;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| id_arzenna   | varchar(5)   | YES  |     | NULL    |       |
+| nama_murid   | varchar(10)  | YES  |     | NULL    |       |
+| alamat_murid | varchar(100) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+3 rows in set (0.007 sec)
+
+MariaDB [db_arzenna]> from tbl_arzenna;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from tbl_arzenna' at line 1
+MariaDB [db_arzenna]>
+MariaDB [db_arzenna]> select * from tbl_arzenna;
++------------+------------+------------------------------+
+| id_arzenna | nama_murid | alamat_murid                 |
++------------+------------+------------------------------+
+| 1          | arzenna ha | sukamelang,subang,jawa barat |
++------------+------------+------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [db_arzenna]>
